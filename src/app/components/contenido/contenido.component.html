@@ -1,0 +1,18 @@
+<h1>Lista de estudiantes</h1>
+<h2>Academia: {{titulo}}</h2>
+<table class="table">
+    <tbody>
+        <tr>
+            <th >Nombre</th>
+            <td *ngFor ="let estudiante of estudiantes">{{estudiante.nombre}}</td>
+        </tr>
+        <tr>
+            <th >Edad</th>
+            <td *ngFor ="let estudiante of estudiantes" [ngClass] ="estudiante.edad>21 ? 'success' : 'error'" [style.border]="estudiante.edad>21 ? '1px solid black': '2px solid red'">{{estudiante.edad}}</td>
+        </tr>
+        <tr>
+            <th >Fecha ingreso</th>
+            <td *ngFor ="let estudiante of estudiantes">{{estudiante.fechaIngreso | date }}</td>
+        </tr>
+    </tbody>
+  </table>
